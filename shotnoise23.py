@@ -37,7 +37,7 @@ class Noise:
         
         self.maxout=np.where(self.hot['Vs']==self.hot['Vs'].max())[0]
         
-        if self.hot['Vs'].max()>30:
+        if self.hot['Vs'].max()>30:  # TO remove values with sudden hike in Voltage
             self.hot=self.hot.drop(self.maxout)
             self.cold=self.cold.drop(self.maxout)
         
